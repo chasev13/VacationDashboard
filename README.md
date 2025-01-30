@@ -44,6 +44,7 @@ npm install --save-dev gh-pages
 ```
 
 2. Deploy the application:
+   (inside client)
 ```bash
 npm run deploy
 ```
