@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/VacationDashboard/static/css/main.e6c13ad2.css",
+    "main.js": "/VacationDashboard/static/js/main.878e2077.js",
+    "static/js/488.1bdb48c6.chunk.js": "/VacationDashboard/static/js/488.1bdb48c6.chunk.js",
+    "index.html": "/VacationDashboard/index.html",
+    "main.e6c13ad2.css.map": "/VacationDashboard/static/css/main.e6c13ad2.css.map",
+    "main.878e2077.js.map": "/VacationDashboard/static/js/main.878e2077.js.map",
+    "488.1bdb48c6.chunk.js.map": "/VacationDashboard/static/js/488.1bdb48c6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.878e2077.js"
+  ]
+}
