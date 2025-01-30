@@ -25,7 +25,6 @@ A modern web application for managing and tracking your upcoming and past vacati
 
 1. Clone the repository
 
-
 2. Install dependencies for both frontend and backend 
 ```npm run install-all```
 
@@ -33,6 +32,23 @@ A modern web application for managing and tracking your upcoming and past vacati
 ```npm run start```
 
 The application will be available at `http://localhost:3000`
+
+### Deployment
+
+To deploy the frontend to GitHub Pages:
+
+1. Install the deployment dependencies:
+```bash
+cd client
+npm install --save-dev gh-pages
+```
+
+2. Deploy the application:
+```bash
+npm run deploy
+```
+
+The application will be available at `https://chasev13.github.io/VacationDashboard`
 
 ## 🛠️ Built With
 
@@ -51,7 +67,6 @@ The application will be available at `http://localhost:3000`
 ![Mobile View](screenshots/mobile-view.png)
 
 </details>
-
 
 ## 📜 License
 
