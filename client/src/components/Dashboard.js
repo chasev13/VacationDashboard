@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Container, Button, Box, Typography, Paper, Dialog, DialogTitle, DialogContent, DialogActions, Fade, Slide } from '@mui/material';
 import VacationCard from './VacationCard';
-import axios from 'axios';
+import { vacations } from '../data/vacations';
 import DirectionsBoatIcon from '@mui/icons-material/DirectionsBoat';
 import FlightIcon from '@mui/icons-material/Flight';
 import HotelIcon from '@mui/icons-material/Hotel';
 
 function Dashboard() {
-  const [vacations, setVacations] = useState([]);
+  const [vacationData, setVacationData] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [selectedVacation, setSelectedVacation] = useState(null);
 
   const sortVacations = (vacations) => {
-    const now = new Date();
-    return {
-      upcoming: vacations.filter(v => new Date(v.endDate) >= now),
-      past: vacations.filter(v => new Date(v.endDate) < now)
-    };
+    if (!vacations) return [];
+    
+    return vacations.sort((a, b) => {
+      return new Date(a.startDate) - new Date(b.startDate);
+    });
   };
 
   const handleOpenModal = (vacation) => {
@@ -30,19 +30,13 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    const fetchVacations = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/api/vacations');
-        setVacations(response.data);
-      } catch (error) {
-        console.error('Error fetching vacations:', error);
-      }
-    };
-
-    fetchVacations();
+    setVacationData(sortVacations(vacations));
   }, []);
 
-  const { upcoming, past } = sortVacations(vacations);
+  const { upcoming, past } = {
+    upcoming: vacationData.filter(v => new Date(v.endDate) >= new Date()),
+    past: vacationData.filter(v => new Date(v.endDate) < new Date())
+  };
 
   return (
     <Box sx={{ 
