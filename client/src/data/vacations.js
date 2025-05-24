@@ -1,3 +1,4 @@
+/** vacation data if using static website */
 export const vacations = [
     {
       id: 1,
@@ -30,5 +31,13 @@ export const vacations = [
       endDate: 'Dec 11 2025 00:00:00 GMT-0600',
       description: 'Visiting Ensenda and Catalina Island',
       imageUrl: 'https://images.fineartamerica.com/images-medium-large-5/ensenada-mexico-003-lance-vaughn.jpg'
+    },
+    {
+      id: 5,
+      destination: 'Cruise - Miami to Bahamas',
+      startDate: 'Aug 23 2025 00:00:00 GMT-0600',
+      endDate: 'Aug 28 2025 00:00:00 GMT-0600',
+      description: 'Visiting Half Moon Cay and Nassau',
+      imageUrl: 'https://images.squarespace-cdn.com/content/v1/531a9869e4b03e512ac917b7/1399075938240-4SXL7BPQ175SWPCP6JON/half-moon-cay-beach.jpg?format=750w'
     }
   ];

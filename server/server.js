@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Sample vacation data (you can replace with database later)
+// vacation data if using non static website
 const vacations = [
   {
     id: 1,
