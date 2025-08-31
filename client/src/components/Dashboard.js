@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Container, Button, Box, Typography, Paper, Dialog, DialogTitle, DialogContent, DialogActions, Fade, Slide } from '@mui/material';
 import VacationCard from './VacationCard';
+import { vacations } from '../data/vacations';
 import DirectionsBoatIcon from '@mui/icons-material/DirectionsBoat';
 import FlightIcon from '@mui/icons-material/Flight';
 import HotelIcon from '@mui/icons-material/Hotel';
-import { google } from 'googleapis';
 
 function Dashboard() {
   const [vacationData, setVacationData] = useState([]);
@@ -30,32 +30,7 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    const fetchVacations = async () => {
-      try {
-        const sheets = google.sheets({ version: 'v4', auth: process.env.REACT_APP_API_KEY });
-        const response = await sheets.spreadsheets.values.get({
-          spreadsheetId: process.env.REACT_APP_SPREADSHEET_ID,
-          range: 'Sheet1', // or your specific sheet name
-        });
-
-        const rows = response.data.values;
-        if (rows.length) {
-          const header = rows[0];
-          const data = rows.slice(1).map(row => {
-            const vacation = {};
-            header.forEach((key, index) => {
-              vacation[key] = row[index];
-            });
-            return vacation;
-          });
-          setVacationData(sortVacations(data));
-        }
-      } catch (error) {
-        console.error("The API returned an error: " + error);
-      }
-    };
-
-    fetchVacations();
+    setVacationData(sortVacations(vacations));
   }, []);
 
   const { upcoming, past } = {
