@@ -39,5 +39,13 @@ export const vacations = [
       endDate: 'Aug 28 2025 00:00:00 GMT-0600',
       description: 'Visiting Half Moon Cay and Nassau',
       imageUrl: 'https://images.squarespace-cdn.com/content/v1/531a9869e4b03e512ac917b7/1399075938240-4SXL7BPQ175SWPCP6JON/half-moon-cay-beach.jpg?format=750w'
+    },
+    {
+      id: 6,
+      destination: 'Cruise - Orlando to Southern Caribbean',
+      startDate: 'May 17 2026 00:00:00 GMT-0600',
+      endDate: 'May 28 2026 00:00:00 GMT-0600',
+      description: 'Ports of Call: Celebration Key, Aruba, Curacao, and St. Thomas',
+      imageUrl: 'https://images.unsplash.com/photo-1542259009477-d625272157b7?w=800'
     }
   ];

@@ -136,12 +136,7 @@ function Dashboard() {
                   <Typography variant="body1" paragraph>
                     {selectedVacation.description}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Transportation: {selectedVacation.transportation}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Accommodation: {selectedVacation.accommodation}
-                  </Typography>
+
                 </Box>
               </DialogContent>
               <DialogActions>
