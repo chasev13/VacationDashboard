@@ -2,9 +2,23 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-app.use(cors());
-app.use(express.json());
-
+const allowedOrigins = [
+  'https://chasev13.github.io',
+  'http://localhost:3000'
+];
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error('Not allowed by CORS'));
+  }
+}));
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('Referrer-Policy', 'no-referrer');
+  next();
+});
+app.use(express.json({ limit: '10kb' }));
 // vacation data if using non static website
 const vacations = [
   {
