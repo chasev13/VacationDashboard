@@ -75,7 +75,7 @@ function Dashboard() {
         <Grid container spacing={3} sx={{ mb: 6 }}>
           {upcoming.map((vacation, index) => (
             <Slide direction="up" in timeout={500 + index * 200} key={vacation.id}>
-              <Grid item xs={12} md={4}>
+              <Grid size={{ xs: 12, md: 4 }}>
                 <VacationCard 
                   vacation={vacation} 
                   onClick={() => handleOpenModal(vacation)}
@@ -106,7 +106,7 @@ function Dashboard() {
             <Grid container spacing={3} sx={{ mb: 6 }}>
               {past.map((vacation, index) => (
                 <Slide direction="up" in timeout={500 + index * 200} key={vacation.id}>
-                  <Grid item xs={12} md={4}>
+                  <Grid size={{ xs: 12, md: 4 }}>
                     <VacationCard 
                       vacation={vacation} 
                       onClick={() => handleOpenModal(vacation)}
